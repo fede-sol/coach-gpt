@@ -1,0 +1,19 @@
+{
+    "include": [
+        "coach_gpt",
+        "core",
+        "historial"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__"
+    ],
+    "ignore": [
+        "coach_gpt/wsgi.py",
+        "coach_gpt/asgi.py"
+    ],
+    "reportMissingImports": false,
+    "reportMissingModuleSource": false,
+    "pythonVersion": "3.8",
+    "typeCheckingMode": "basic"
+} 
