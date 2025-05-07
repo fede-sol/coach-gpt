@@ -1,6 +1,7 @@
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from ai_processor.views import ChatGPTService
 
 @csrf_exempt
 def chatbot_api_view(request):
@@ -21,8 +22,12 @@ def chatbot_api_view(request):
         if not user_message.strip():
             return JsonResponse({'error': 'El mensaje no puede estar vacío'}, status=400)
         
-        # Respuesta hardcodeada
-        response = "Mensaje de respuesta fijo"
+        service = ChatGPTService()
+        response = service.query_chatgpt(user_message)
+
+
+
+
         return JsonResponse({'response': response}, status=200)
     
     except json.JSONDecodeError:
