@@ -29,7 +29,7 @@ class ChatGPTService:
                 model="gpt-4o-mini",
                 store=True,
                 messages=[
-                    {"role": "user", "content": "write a haiku about ai"}
+                    {"role": "user", "content": "Cual es la capital de argentina? "}
                 ]
             )
             return {"response": completion.choices[0].message.content}
