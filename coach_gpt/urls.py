@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('ai_processor.urls')),
+    path('', include('chatbot.urls')),
     path('wp/', include('wp_controller.urls')),
 ]

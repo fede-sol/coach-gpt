@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'historial',
     'wp_controller',
+    'ai_processor',
+    'chatbot',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 WP_API_URL = 'http://localhost:3000'
+OPENAI_API_KEY = config('OPENAI_API_KEY')
